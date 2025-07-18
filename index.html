@@ -1,0 +1,4076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RefurbTechHub - Buy Quality Used Devices</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img src="images/logo.png" style="height: 40px; border-radius: 50%; margin-right: 10px;">
+      <span class="brand-text">RefurbTechHub</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <form class="d-flex mx-auto search-bar" role="search">
+        <input id="searchInput" class="form-control" type="search" placeholder="Search..." aria-label="Search">
+        <button class="btn" type="submit">Search</button>
+      </form>
+      <div class="navbar-buttons d-flex align-items-center">
+        <a class="nav-link cart-box position-relative me-3" href="javascript:void(0);" onclick="toggleCartSidebar()">
+          <i class="fas fa-shopping-cart me-1"></i>Cart
+          <span id="cartCount" class="badge bg-danger rounded-pill position-absolute top-0 end-0 translate-middle">0</span>
+        </a>
+        <!-- Auth Buttons -->
+<div id="authButtons">
+  <a href="javascript:void(0);" class="btn login-btn" id="loginBtn" onclick="toggleLogin(true)">Login</a>
+  <div id="profileDropdown" class="dropdown d-none">
+    <button class="btn btn-outline-success dropdown-toggle" type="button" id="profileBtn" data-bs-toggle="dropdown" aria-expanded="false">
+      My Account
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileBtn">
+  <li><a class="dropdown-item" href="profile.html">Edit Profile</a></li>
+  <li><hr class="dropdown-divider"></li>
+  <li><a class="dropdown-item" href="javascript:void(0);" onclick="logoutUser()">Logout</a></li>
+</ul>
+
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- START: Category Section like Cashify -->
+<div class="category-bar">
+  <ul class="category-list">
+    <!-- 1. Buy Phone -->
+    <li class="dropdown">
+      <a href="#">Buy Phone<i class="arrow">&#9660;</i></a>
+      <div class="dropdown-menu">
+          <p class="dropdown-heading">Top Brands</p>
+          <button data-category="phone" class="dropdown-item">Apple</button>
+          <button data-category="phone" class="dropdown-item">Samsung</button>
+          <button data-category="phone" class="dropdown-item">Xiaomi</button>
+          <button data-category="phone" class="dropdown-item">Oneplus</button>
+          <button data-category="phone" class="dropdown-item">Google</button>
+          <button data-category="phone" class="dropdown-item">Oppo</button>
+          <button data-category="phone" class="dropdown-item">Vivo</button>
+      </div>
+    </li>
+
+    <!-- 2. Buy Laptop -->
+    <li class="dropdown">
+      <a href="#">Buy Laptop<i class="arrow">&#9660;</i></a>
+      <div class="dropdown-menu">
+          <p class="dropdown-heading">Top Brands</p>
+          <button data-category="laptop" class="dropdown-item">Dell</button>
+          <button data-category="laptop" class="dropdown-item">HP</button>
+          <button data-category="laptop" class="dropdown-item">Acer</button>
+          <button data-category="laptop" class="dropdown-item">Apple</button>
+          <button data-category="laptop" class="dropdown-item">Asus</button>
+          <button data-category="laptop" class="dropdown-item">Lenovo</button>
+          <button data-category="laptop" class="dropdown-item">MSI</button>
+      </div>
+    </li>
+
+    <!-- 3. Buy Tablet -->
+    <li class="dropdown">
+      <a href="#">Buy Tablet<i class="arrow">&#9660;</i></a>
+      <div class="dropdown-menu">
+          <p class="dropdown-heading">Top Brands</p>
+          <button data-category="tablet" class="dropdown-item">Apple</button>
+          <button data-category="tablet" class="dropdown-item">Samsung</button>
+          <button data-category="tablet" class="dropdown-item">Xiaomi</button>
+          <button data-category="tablet" class="dropdown-item">Oppo</button>
+          <button data-category="tablet" class="dropdown-item">Realme</button>
+          <button data-category="tablet" class="dropdown-item">Lenovo</button>
+          <button data-category="tablet" class="dropdown-item">Other Brands</button>
+      </div>
+    </li>
+
+    <!-- 4. Buy Smart Watch -->
+    <li class="dropdown">
+      <a href="#">Smart Watch<i class="arrow">&#9660;</i></a>
+      <div class="dropdown-menu">
+          <p class="dropdown-heading">Top Brands</p>
+          <button data-category="watch" class="dropdown-item">Apple</button>
+          <button data-category="watch" class="dropdown-item">Samsung</button>
+          <button data-category="watch" class="dropdown-item">Google</button>
+          <button data-category="watch" class="dropdown-item">Huawei/button>
+          <button data-category="watch" class="dropdown-item">Other Brands</button>
+      </div>
+    </li>
+
+    <!-- 4. Repair Services -->
+    <li class="dropdown">
+      <a href="#">Repair Services<i class="arrow">&#9660;</i></a>
+      <div class="dropdown-menu">
+          <p class="dropdown-heading">Repair Your Devices</p>
+          <button data-category="repair" class="dropdown-item">Phone Repair</button>
+          <button data-category="repair" class="dropdown-item">Laptop Repair</button>
+          <button data-category="repair" class="dropdown-item">Tablet Repair</button>
+          <button data-category="repair" class="dropdown-item">Smart Watch Repair</button>
+      </div>
+    </li>
+  </ul>
+</div>
+<!-- Carousel Wrapper -->
+<div class="carousel-wrapper">
+  <div class="rounded-4 overflow-hidden shadow-sm position-relative">
+    <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/img2.png" class="d-block w-100" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+          <img src="images/img1.jpg" class="d-block w-100" alt="Slide 2">
+        </div>
+        <div class="carousel-item">
+          <img src="images/img4.jpg" class="d-block w-100" alt="Slide 3">
+        </div>
+        <div class="carousel-item">
+          <img src="images/img5.png" class="d-block w-100" alt="Slide 4">
+        </div>
+        <div class="carousel-item">
+          <img src="images/img8.png" class="d-block w-100" alt="Slide 5">
+        </div>
+        <div class="carousel-item">
+          <img src="images/img9.png" class="d-block w-100" alt="Slide 6">
+        </div>
+        <div class="carousel-item">
+          <img src="images/img3.png" class="d-block w-100" alt="Slide 7">
+        </div>
+        <div class="carousel-item">
+          <img src="images/img7.png" class="d-block w-100" alt="Slide 9">
+        </div>
+      </div>
+      <!-- Navigation Buttons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+ <!-- UPDATED TEMPLATE PRODUCT POOLS -->
+  <!--phones product-->
+<template id="phoneProducts">
+  <!--Apple phones-->
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="phone">
+    <div class="card h-100">
+      <img src="images/img2.png" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Apple iPhone 14 Pro</h5>
+        <p class="card-text">Premium refurbished iPhone with A16 chip.</p>
+        <div class="price-container">
+          <span class="current-price">₹72999</span>
+          <span class="original-price">₹99999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="phone">
+    <div class="card h-100">
+      <img src="images/img1.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">iPhone SE 2022</h5>
+        <p class="card-text">Compact powerhouse with A15 chip.</p>
+        <div class="price-container">
+          <span class="current-price">₹34999</span>
+          <span class="original-price">₹49999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="phone">
+  <div class="card h-100">
+    <img src="images/img3.png" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Apple iPhone 13</h5>
+      <p class="card-text">Dual-camera system and A15 Bionic.</p>
+      <div class="price-container">
+        <span class="current-price">₹58999</span>
+        <span class="original-price">₹79999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="apple" data-category="phone">
+  <div class="card h-100">
+    <img src="images/img4.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Apple iPhone 12</h5>
+      <p class="card-text">Refurbished OLED beauty with A14 chip.</p>
+      <div class="price-container">
+        <span class="current-price">₹42999</span>
+        <span class="original-price">₹69999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="apple" data-category="phone">
+  <div class="card h-100">
+    <img src="images/img5.png" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Apple iPhone 11</h5>
+      <p class="card-text">Great performance and value in one.</p>
+      <div class="price-container">
+        <span class="current-price">₹31999</span>
+        <span class="original-price">₹54999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="apple" data-category="phone">
+  <div class="card h-100">
+    <img src="images/img6.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Apple iPhone XR</h5>
+      <p class="card-text">Brilliant Liquid Retina and Face ID.</p>
+      <div class="price-container">
+        <span class="current-price">₹25999</span>
+        <span class="original-price">₹47999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="apple" data-category="phone">
+  <div class="card h-100">
+    <img src="images/img7.png" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Apple iPhone 8 Plus</h5>
+      <p class="card-text">Classic design with powerful performance.</p>
+      <div class="price-container">
+        <span class="current-price">₹20999</span>
+        <span class="original-price">₹39999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="apple" data-category="phone">
+  <div class="card h-100">
+    <img src="images/img8.png" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Apple iPhone 7</h5>
+      <p class="card-text">Reliable performance in compact form.</p>
+      <div class="price-container">
+        <span class="current-price">₹14999</span>
+        <span class="original-price">₹29999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="apple" data-category="phone">
+  <div class="card h-100">
+    <img src="images/img9.png" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Apple iPhone 6s</h5>
+      <p class="card-text">Affordable iPhone with strong build quality.</p>
+      <div class="price-container">
+        <span class="current-price">₹10999</span>
+        <span class="original-price">₹19999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="apple" data-category="phone">
+  <div class="card h-100">
+    <img src="images/zfold5.jpeg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Apple iPhone 7s</h5>
+      <p class="card-text">Affordable iPhone with strong build.</p>
+      <div class="price-container">
+        <span class="current-price">₹10999</span>
+        <span class="original-price">₹19999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Samsung phones-->
+<div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="phone">
+  <div class="card h-100">
+    <img src="images/galaxy_s23.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Samsung Galaxy S23</h5>
+      <p class="card-text">Flagship with Snapdragon 8 Gen 2 and Dynamic AMOLED.</p>
+      <div class="price-container">
+        <span class="current-price">₹69999</span>
+        <span class="original-price">₹89999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="phone">
+  <div class="card h-100">
+    <img src="images/galaxy_s22.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Samsung Galaxy S22</h5>
+      <p class="card-text">Compact flagship with pro-grade camera.</p>
+      <div class="price-container">
+        <span class="current-price">₹52999</span>
+        <span class="original-price">₹74999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="phone">
+  <div class="card h-100">
+    <img src="images/galaxy_z_flip4.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Galaxy Z Flip 4</h5>
+      <p class="card-text">Innovative foldable with premium build.</p>
+      <div class="price-container">
+        <span class="current-price">₹77999</span>
+        <span class="original-price">₹99999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="phone">
+  <div class="card h-100">
+    <img src="images/galaxy_note_20.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Galaxy Note 20 Ultra</h5>
+      <p class="card-text">Productivity beast with S Pen and 108MP camera.</p>
+      <div class="price-container">
+        <span class="current-price">₹62999</span>
+        <span class="original-price">₹104999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="phone">
+  <div class="card h-100">
+    <img src="images/galaxy_a73.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Galaxy A73 5G</h5>
+      <p class="card-text">Slim mid-range device with 120Hz Super AMOLED.</p>
+      <div class="price-container">
+        <span class="current-price">₹35999</span>
+        <span class="original-price">₹46999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="phone">
+  <div class="card h-100">
+    <img src="images/galaxy_m53.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Galaxy M53 5G</h5>
+      <p class="card-text">Affordable 5G phone with powerful Dimensity chip.</p>
+      <div class="price-container">
+        <span class="current-price">₹24999</span>
+        <span class="original-price">₹34999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="phone">
+  <div class="card h-100">
+    <img src="images/galaxy_s20fe.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Galaxy S20 FE</h5>
+      <p class="card-text">Fan edition with great balance of features.</p>
+      <div class="price-container">
+        <span class="current-price">₹29999</span>
+        <span class="original-price">₹49999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="phone">
+  <div class="card h-100">
+    <img src="images/galaxy_a52.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Galaxy A52</h5>
+      <p class="card-text">Reliable everyday performer with good camera.</p>
+      <div class="price-container">
+        <span class="current-price">₹22999</span>
+        <span class="original-price">₹32999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="phone">
+  <div class="card h-100">
+    <img src="images/galaxy_f23.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Galaxy F23 5G</h5>
+      <p class="card-text">Budget 5G phone with Snapdragon 750G.</p>
+      <div class="price-container">
+        <span class="current-price">₹15999</span>
+        <span class="original-price">₹22999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="phone">
+  <div class="card h-100">
+    <img src="images/galaxy_m32.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Galaxy M32</h5>
+      <p class="card-text">Budget-friendly with 6000mAh battery.</p>
+      <div class="price-container">
+        <span class="current-price">₹12999</span>
+        <span class="original-price">₹17999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Xiaomi phones-->
+<div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="phone">
+  <div class="card h-100">
+    <img src="images/xiaomi_mi11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Xiaomi Mi 11X</h5>
+      <p class="card-text">Snapdragon 870 with AMOLED Display</p>
+      <div class="price-container">
+        <span class="current-price">₹24999</span>
+        <span class="original-price">₹34999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="phone">
+  <div class="card h-100">
+    <img src="images/xiaomi_mi11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Xiaomi Mi 11X</h5>
+      <p class="card-text">Snapdragon 870 with AMOLED Display</p>
+      <div class="price-container">
+        <span class="current-price">₹24999</span>
+        <span class="original-price">₹34999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="phone">
+  <div class="card h-100">
+    <img src="images/xiaomi_mi11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Xiaomi Mi 11X</h5>
+      <p class="card-text">Snapdragon 870 with AMOLED Display</p>
+      <div class="price-container">
+        <span class="current-price">₹24999</span>
+        <span class="original-price">₹34999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="phone">
+  <div class="card h-100">
+    <img src="images/xiaomi_mi11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Xiaomi Mi 11X</h5>
+      <p class="card-text">Snapdragon 870 with AMOLED Display</p>
+      <div class="price-container">
+        <span class="current-price">₹24999</span>
+        <span class="original-price">₹34999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="phone">
+  <div class="card h-100">
+    <img src="images/xiaomi_mi11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Xiaomi Mi 11X</h5>
+      <p class="card-text">Snapdragon 870 with AMOLED Display</p>
+      <div class="price-container">
+        <span class="current-price">₹24999</span>
+        <span class="original-price">₹34999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="phone">
+  <div class="card h-100">
+    <img src="images/xiaomi_mi11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Xiaomi Mi 11X</h5>
+      <p class="card-text">Snapdragon 870 with AMOLED Display</p>
+      <div class="price-container">
+        <span class="current-price">₹24999</span>
+        <span class="original-price">₹34999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="phone">
+  <div class="card h-100">
+    <img src="images/xiaomi_mi11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Xiaomi Mi 11X</h5>
+      <p class="card-text">Snapdragon 870 with AMOLED Display</p>
+      <div class="price-container">
+        <span class="current-price">₹24999</span>
+        <span class="original-price">₹34999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="phone">
+  <div class="card h-100">
+    <img src="images/xiaomi_mi11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Xiaomi Mi 11X</h5>
+      <p class="card-text">Snapdragon 870 with AMOLED Display</p>
+      <div class="price-container">
+        <span class="current-price">₹24999</span>
+        <span class="original-price">₹34999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="phone">
+  <div class="card h-100">
+    <img src="images/xiaomi_mi11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Xiaomi Mi 11X</h5>
+      <p class="card-text">Snapdragon 870 with AMOLED Display</p>
+      <div class="price-container">
+        <span class="current-price">₹24999</span>
+        <span class="original-price">₹34999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="phone">
+  <div class="card h-100">
+    <img src="images/xiaomi_mi11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Xiaomi Mi 11X</h5>
+      <p class="card-text">Snapdragon 870 with AMOLED Display</p>
+      <div class="price-container">
+        <span class="current-price">₹24999</span>
+        <span class="original-price">₹34999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Oneplus phones-->
+<div class="col-md-3 col-6 product-card" data-brand="oneplus" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oneplus_11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">OnePlus 11</h5>
+      <p class="card-text">Flagship performance with Snapdragon 8 Gen 2.</p>
+      <div class="price-container">
+        <span class="current-price">₹57999</span>
+        <span class="original-price">₹72999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="oneplus" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oneplus_11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">OnePlus 11</h5>
+      <p class="card-text">Flagship performance with Snapdragon 8 Gen 2.</p>
+      <div class="price-container">
+        <span class="current-price">₹57999</span>
+        <span class="original-price">₹72999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="oneplus" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oneplus_11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">OnePlus 11</h5>
+      <p class="card-text">Flagship performance with Snapdragon 8 Gen 2.</p>
+      <div class="price-container">
+        <span class="current-price">₹57999</span>
+        <span class="original-price">₹72999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="oneplus" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oneplus_11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">OnePlus 11</h5>
+      <p class="card-text">Flagship performance with Snapdragon 8 Gen 2.</p>
+      <div class="price-container">
+        <span class="current-price">₹57999</span>
+        <span class="original-price">₹72999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="oneplus" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oneplus_11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">OnePlus 11</h5>
+      <p class="card-text">Flagship performance with Snapdragon 8 Gen 2.</p>
+      <div class="price-container">
+        <span class="current-price">₹57999</span>
+        <span class="original-price">₹72999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="oneplus" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oneplus_11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">OnePlus 11</h5>
+      <p class="card-text">Flagship performance with Snapdragon 8 Gen 2.</p>
+      <div class="price-container">
+        <span class="current-price">₹57999</span>
+        <span class="original-price">₹72999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="oneplus" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oneplus_11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">OnePlus 11</h5>
+      <p class="card-text">Flagship performance with Snapdragon 8 Gen 2.</p>
+      <div class="price-container">
+        <span class="current-price">₹57999</span>
+        <span class="original-price">₹72999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="oneplus" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oneplus_11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">OnePlus 11</h5>
+      <p class="card-text">Flagship performance with Snapdragon 8 Gen 2.</p>
+      <div class="price-container">
+        <span class="current-price">₹57999</span>
+        <span class="original-price">₹72999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="oneplus" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oneplus_11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">OnePlus 11</h5>
+      <p class="card-text">Flagship performance with Snapdragon 8 Gen 2.</p>
+      <div class="price-container">
+        <span class="current-price">₹57999</span>
+        <span class="original-price">₹72999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="oneplus" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oneplus_11.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">OnePlus 11</h5>
+      <p class="card-text">Flagship performance with Snapdragon 8 Gen 2.</p>
+      <div class="price-container">
+        <span class="current-price">₹57999</span>
+        <span class="original-price">₹72999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Google phones-->
+<div class="col-md-3 col-6 product-card" data-brand="google" data-category="phone">
+  <div class="card h-100">
+    <img src="images/pixel_7.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Google Pixel 7</h5>
+      <p class="card-text">Smooth Android experience with Tensor chip.</p>
+      <div class="price-container">
+        <span class="current-price">₹45999</span>
+        <span class="original-price">₹62999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="google" data-category="phone">
+  <div class="card h-100">
+    <img src="images/pixel_7.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Google Pixel 7</h5>
+      <p class="card-text">Smooth Android experience with Tensor chip.</p>
+      <div class="price-container">
+        <span class="current-price">₹45999</span>
+        <span class="original-price">₹62999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="google" data-category="phone">
+  <div class="card h-100">
+    <img src="images/pixel_7.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Google Pixel 7</h5>
+      <p class="card-text">Smooth Android experience with Tensor chip.</p>
+      <div class="price-container">
+        <span class="current-price">₹45999</span>
+        <span class="original-price">₹62999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="google" data-category="phone">
+  <div class="card h-100">
+    <img src="images/pixel_7.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Google Pixel 7</h5>
+      <p class="card-text">Smooth Android experience with Tensor chip.</p>
+      <div class="price-container">
+        <span class="current-price">₹45999</span>
+        <span class="original-price">₹62999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="google" data-category="phone">
+  <div class="card h-100">
+    <img src="images/pixel_7.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Google Pixel 7</h5>
+      <p class="card-text">Smooth Android experience with Tensor chip.</p>
+      <div class="price-container">
+        <span class="current-price">₹45999</span>
+        <span class="original-price">₹62999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="google" data-category="phone">
+  <div class="card h-100">
+    <img src="images/pixel_7.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Google Pixel 7</h5>
+      <p class="card-text">Smooth Android experience with Tensor chip.</p>
+      <div class="price-container">
+        <span class="current-price">₹45999</span>
+        <span class="original-price">₹62999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="google" data-category="phone">
+  <div class="card h-100">
+    <img src="images/pixel_7.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Google Pixel 7</h5>
+      <p class="card-text">Smooth Android experience with Tensor chip.</p>
+      <div class="price-container">
+        <span class="current-price">₹45999</span>
+        <span class="original-price">₹62999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="google" data-category="phone">
+  <div class="card h-100">
+    <img src="images/pixel_7.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Google Pixel 7</h5>
+      <p class="card-text">Smooth Android experience with Tensor chip.</p>
+      <div class="price-container">
+        <span class="current-price">₹45999</span>
+        <span class="original-price">₹62999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="google" data-category="phone">
+  <div class="card h-100">
+    <img src="images/pixel_7.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Google Pixel 7</h5>
+      <p class="card-text">Smooth Android experience with Tensor chip.</p>
+      <div class="price-container">
+        <span class="current-price">₹45999</span>
+        <span class="original-price">₹62999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3 col-6 product-card" data-brand="google" data-category="phone">
+  <div class="card h-100">
+    <img src="images/pixel_7.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Google Pixel 7</h5>
+      <p class="card-text">Smooth Android experience with Tensor chip.</p>
+      <div class="price-container">
+        <span class="current-price">₹45999</span>
+        <span class="original-price">₹62999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Oppo Phones -->
+<div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oppo_reno8.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Oppo Reno 8</h5>
+      <p class="card-text">Stylish design with solid performance.</p>
+      <div class="price-container">
+        <span class="current-price">₹23999</span>
+        <span class="original-price">₹32999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oppo_reno8.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Oppo Reno 8</h5>
+      <p class="card-text">Stylish design with solid performance.</p>
+      <div class="price-container">
+        <span class="current-price">₹23999</span>
+        <span class="original-price">₹32999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oppo_reno8.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Oppo Reno 8</h5>
+      <p class="card-text">Stylish design with solid performance.</p>
+      <div class="price-container">
+        <span class="current-price">₹23999</span>
+        <span class="original-price">₹32999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oppo_reno8.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Oppo Reno 8</h5>
+      <p class="card-text">Stylish design with solid performance.</p>
+      <div class="price-container">
+        <span class="current-price">₹23999</span>
+        <span class="original-price">₹32999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oppo_reno8.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Oppo Reno 8</h5>
+      <p class="card-text">Stylish design with solid performance.</p>
+      <div class="price-container">
+        <span class="current-price">₹23999</span>
+        <span class="original-price">₹32999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oppo_reno8.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Oppo Reno 8</h5>
+      <p class="card-text">Stylish design with solid performance.</p>
+      <div class="price-container">
+        <span class="current-price">₹23999</span>
+        <span class="original-price">₹32999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oppo_reno8.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Oppo Reno 8</h5>
+      <p class="card-text">Stylish design with solid performance.</p>
+      <div class="price-container">
+        <span class="current-price">₹23999</span>
+        <span class="original-price">₹32999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oppo_reno8.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Oppo Reno 8</h5>
+      <p class="card-text">Stylish design with solid performance.</p>
+      <div class="price-container">
+        <span class="current-price">₹23999</span>
+        <span class="original-price">₹32999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oppo_reno8.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Oppo Reno 8</h5>
+      <p class="card-text">Stylish design with solid performance.</p>
+      <div class="price-container">
+        <span class="current-price">₹23999</span>
+        <span class="original-price">₹32999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/oppo_reno8.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Oppo Reno 8</h5>
+      <p class="card-text">Stylish design with solid performance.</p>
+      <div class="price-container">
+        <span class="current-price">₹23999</span>
+        <span class="original-price">₹32999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Vivo Phones -->
+<div class="col-md-3 col-6 product-card" data-brand="vivo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/vivo_v27.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Vivo V27</h5>
+      <p class="card-text">Camera-focused phone with elegant design.</p>
+      <div class="price-container">
+        <span class="current-price">₹21999</span>
+        <span class="original-price">₹29999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="vivo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/vivo_v27.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Vivo V27</h5>
+      <p class="card-text">Camera-focused phone with elegant design.</p>
+      <div class="price-container">
+        <span class="current-price">₹21999</span>
+        <span class="original-price">₹29999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="vivo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/vivo_v27.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Vivo V27</h5>
+      <p class="card-text">Camera-focused phone with elegant design.</p>
+      <div class="price-container">
+        <span class="current-price">₹21999</span>
+        <span class="original-price">₹29999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="vivo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/vivo_v27.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Vivo V27</h5>
+      <p class="card-text">Camera-focused phone with elegant design.</p>
+      <div class="price-container">
+        <span class="current-price">₹21999</span>
+        <span class="original-price">₹29999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="vivo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/vivo_v27.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Vivo V27</h5>
+      <p class="card-text">Camera-focused phone with elegant design.</p>
+      <div class="price-container">
+        <span class="current-price">₹21999</span>
+        <span class="original-price">₹29999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="vivo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/vivo_v27.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Vivo V27</h5>
+      <p class="card-text">Camera-focused phone with elegant design.</p>
+      <div class="price-container">
+        <span class="current-price">₹21999</span>
+        <span class="original-price">₹29999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="vivo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/vivo_v27.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Vivo V27</h5>
+      <p class="card-text">Camera-focused phone with elegant design.</p>
+      <div class="price-container">
+        <span class="current-price">₹21999</span>
+        <span class="original-price">₹29999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="vivo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/vivo_v27.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Vivo V27</h5>
+      <p class="card-text">Camera-focused phone with elegant design.</p>
+      <div class="price-container">
+        <span class="current-price">₹21999</span>
+        <span class="original-price">₹29999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="vivo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/vivo_v27.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Vivo V27</h5>
+      <p class="card-text">Camera-focused phone with elegant design.</p>
+      <div class="price-container">
+        <span class="current-price">₹21999</span>
+        <span class="original-price">₹29999</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 product-card" data-brand="vivo" data-category="phone">
+  <div class="card h-100">
+    <img src="images/vivo_v27.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Vivo V27</h5>
+      <p class="card-text">Camera-focused phone with elegant design.</p>
+      <div class="price-container">
+        <span class="current-price">₹21999</span>
+        <span class="original-price">₹29999</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Ensure Product Type and Availability filters show -->
+<div class="product-card d-none" data-brand="default" data-category="product type"></div>
+<div class="product-card d-none" data-brand="default" data-category="availability"></div>
+
+</template>
+<!--Laptop products-->
+<template id="laptopProducts">
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/macbook_air_m1.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">MacBook Air M1</h5>
+        <p class="card-text">Apple's M1-powered thin and light laptop.</p>
+        <div class="price-container">
+          <span class="current-price">₹74999</span>
+          <span class="original-price">₹99999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/macbook_pro_13.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">MacBook Pro 13</h5>
+        <p class="card-text">Refurbished Pro with Retina display and Touch Bar.</p>
+        <div class="price-container">
+          <span class="current-price">₹89999</span>
+          <span class="original-price">₹124999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/macbook_pro_16.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">MacBook Pro 16</h5>
+        <p class="card-text">Powerful 16-inch MacBook for creators.</p>
+        <div class="price-container">
+          <span class="current-price">₹139999</span>
+          <span class="original-price">₹179999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/macbook_air_m2.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">MacBook Air M2</h5>
+        <p class="card-text">Next-gen Apple silicon with stunning display.</p>
+        <div class="price-container">
+          <span class="current-price">₹99999</span>
+          <span class="original-price">₹129999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/macbook_12.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">MacBook 12</h5>
+        <p class="card-text">Ultra-portable and efficient MacBook model.</p>
+        <div class="price-container">
+          <span class="current-price">₹49999</span>
+          <span class="original-price">₹89999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/macbook_pro_2020.jpg" class="card-img-top" alt="MacBook Pro 2020">
+      <div class="card-body">
+        <h5 class="card-title">MacBook Pro 2020</h5>
+        <p class="card-text">Balanced performance with 10th-gen Intel CPU.</p>
+        <div class="price-container">
+          <span class="current-price">₹82999</span>
+          <span class="original-price">₹114999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/macbook_air_2019.jpg" class="card-img-top" alt="MacBook Air 2019">
+      <div class="card-body">
+        <h5 class="card-title">MacBook Air 2019</h5>
+        <p class="card-text">Classic thin design, great for students.</p>
+        <div class="price-container">
+          <span class="current-price">₹58999</span>
+          <span class="original-price">₹79999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/macbook_pro_2018.jpg" class="card-img-top" alt="MacBook Pro 2018">
+      <div class="card-body">
+        <h5 class="card-title">MacBook Pro 2018</h5>
+        <p class="card-text">Refurbished i7 MacBook Pro for professionals.</p>
+        <div class="price-container">
+          <span class="current-price">₹68999</span>
+          <span class="original-price">₹109999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/macbook_pro_touchbar.jpg" class="card-img-top" alt="MacBook Pro Touch Bar">
+      <div class="card-body">
+        <h5 class="card-title">MacBook Pro Touch Bar</h5>
+        <p class="card-text">Touch Bar support with SSD and Retina.</p>
+        <div class="price-container">
+          <span class="current-price">₹74999</span>
+          <span class="original-price">₹104999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/macbook_air_2017.jpg" class="card-img-top" alt="MacBook Air 2017">
+      <div class="card-body">
+        <h5 class="card-title">MacBook Air 2017</h5>
+        <p class="card-text">Affordable and reliable MacBook Air.</p>
+        <div class="price-container">
+          <span class="current-price">₹38999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Dell Laptops -->
+  <div class="col-md-3 col-6 product-card" data-brand="dell" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/dell_inspiron.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Dell Inspiron 15</h5>
+        <p class="card-text">Reliable workhorse with Intel i5.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹64999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3 col-6 product-card" data-brand="dell" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/dell_inspiron.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Dell Inspiron 15</h5>
+        <p class="card-text">Reliable workhorse with Intel i5.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹64999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3 col-6 product-card" data-brand="dell" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/dell_inspiron.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Dell Inspiron 15</h5>
+        <p class="card-text">Reliable workhorse with Intel i5.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹64999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3 col-6 product-card" data-brand="dell" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/dell_inspiron.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Dell Inspiron 15</h5>
+        <p class="card-text">Reliable workhorse with Intel i5.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹64999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3 col-6 product-card" data-brand="dell" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/dell_inspiron.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Dell Inspiron 15</h5>
+        <p class="card-text">Reliable workhorse with Intel i5.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹64999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3 col-6 product-card" data-brand="dell" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/dell_inspiron.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Dell Inspiron 15</h5>
+        <p class="card-text">Reliable workhorse with Intel i5.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹64999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3 col-6 product-card" data-brand="dell" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/dell_inspiron.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Dell Inspiron 15</h5>
+        <p class="card-text">Reliable workhorse with Intel i5.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹64999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3 col-6 product-card" data-brand="dell" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/dell_inspiron.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Dell Inspiron 15</h5>
+        <p class="card-text">Reliable workhorse with Intel i5.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹64999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3 col-6 product-card" data-brand="dell" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/dell_inspiron.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Dell Inspiron 15</h5>
+        <p class="card-text">Reliable workhorse with Intel i5.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹64999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="dell" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/dell_inspiron.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Dell Inspiron 15</h5>
+        <p class="card-text">Reliable workhorse with Intel i5.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹64999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Hp laptops-->
+  <div class="col-md-3 col-6 product-card" data-brand="hp" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/hp_pavilion.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">HP Pavilion 14</h5>
+        <p class="card-text">Sleek design with Ryzen 5 processor.</p>
+        <div class="price-container">
+          <span class="current-price">₹50999</span>
+          <span class="original-price">₹65999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="hp" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/hp_pavilion.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">HP Pavilion 14</h5>
+        <p class="card-text">Sleek design with Ryzen 5 processor.</p>
+        <div class="price-container">
+          <span class="current-price">₹50999</span>
+          <span class="original-price">₹65999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="hp" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/hp_pavilion.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">HP Pavilion 14</h5>
+        <p class="card-text">Sleek design with Ryzen 5 processor.</p>
+        <div class="price-container">
+          <span class="current-price">₹50999</span>
+          <span class="original-price">₹65999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="hp" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/hp_pavilion.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">HP Pavilion 14</h5>
+        <p class="card-text">Sleek design with Ryzen 5 processor.</p>
+        <div class="price-container">
+          <span class="current-price">₹50999</span>
+          <span class="original-price">₹65999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="hp" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/hp_pavilion.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">HP Pavilion 14</h5>
+        <p class="card-text">Sleek design with Ryzen 5 processor.</p>
+        <div class="price-container">
+          <span class="current-price">₹50999</span>
+          <span class="original-price">₹65999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="hp" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/hp_pavilion.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">HP Pavilion 14</h5>
+        <p class="card-text">Sleek design with Ryzen 5 processor.</p>
+        <div class="price-container">
+          <span class="current-price">₹50999</span>
+          <span class="original-price">₹65999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="hp" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/hp_pavilion.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">HP Pavilion 14</h5>
+        <p class="card-text">Sleek design with Ryzen 5 processor.</p>
+        <div class="price-container">
+          <span class="current-price">₹50999</span>
+          <span class="original-price">₹65999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="hp" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/hp_pavilion.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">HP Pavilion 14</h5>
+        <p class="card-text">Sleek design with Ryzen 5 processor.</p>
+        <div class="price-container">
+          <span class="current-price">₹50999</span>
+          <span class="original-price">₹65999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="hp" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/hp_pavilion.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">HP Pavilion 14</h5>
+        <p class="card-text">Sleek design with Ryzen 5 processor.</p>
+        <div class="price-container">
+          <span class="current-price">₹50999</span>
+          <span class="original-price">₹65999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="hp" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/hp_pavilion.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">HP Pavilion 14</h5>
+        <p class="card-text">Sleek design with Ryzen 5 processor.</p>
+        <div class="price-container">
+          <span class="current-price">₹50999</span>
+          <span class="original-price">₹65999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Acer laptops-->
+  <div class="col-md-3 col-6 product-card" data-brand="acer" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/acer_aspire.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Acer Aspire 7</h5>
+        <p class="card-text">Performance laptop with GTX graphics.</p>
+        <div class="price-container">
+          <span class="current-price">₹54999</span>
+          <span class="original-price">₹69999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="acer" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/acer_aspire.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Acer Aspire 7</h5>
+        <p class="card-text">Performance laptop with GTX graphics.</p>
+        <div class="price-container">
+          <span class="current-price">₹54999</span>
+          <span class="original-price">₹69999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="acer" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/acer_aspire.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Acer Aspire 7</h5>
+        <p class="card-text">Performance laptop with GTX graphics.</p>
+        <div class="price-container">
+          <span class="current-price">₹54999</span>
+          <span class="original-price">₹69999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="acer" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/acer_aspire.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Acer Aspire 7</h5>
+        <p class="card-text">Performance laptop with GTX graphics.</p>
+        <div class="price-container">
+          <span class="current-price">₹54999</span>
+          <span class="original-price">₹69999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="acer" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/acer_aspire.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Acer Aspire 7</h5>
+        <p class="card-text">Performance laptop with GTX graphics.</p>
+        <div class="price-container">
+          <span class="current-price">₹54999</span>
+          <span class="original-price">₹69999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="acer" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/acer_aspire.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Acer Aspire 7</h5>
+        <p class="card-text">Performance laptop with GTX graphics.</p>
+        <div class="price-container">
+          <span class="current-price">₹54999</span>
+          <span class="original-price">₹69999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="acer" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/acer_aspire.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Acer Aspire 7</h5>
+        <p class="card-text">Performance laptop with GTX graphics.</p>
+        <div class="price-container">
+          <span class="current-price">₹54999</span>
+          <span class="original-price">₹69999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="acer" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/acer_aspire.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Acer Aspire 7</h5>
+        <p class="card-text">Performance laptop with GTX graphics.</p>
+        <div class="price-container">
+          <span class="current-price">₹54999</span>
+          <span class="original-price">₹69999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="acer" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/acer_aspire.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Acer Aspire 7</h5>
+        <p class="card-text">Performance laptop with GTX graphics.</p>
+        <div class="price-container">
+          <span class="current-price">₹54999</span>
+          <span class="original-price">₹69999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="acer" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/acer_aspire.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Acer Aspire 7</h5>
+        <p class="card-text">Performance laptop with GTX graphics.</p>
+        <div class="price-container">
+          <span class="current-price">₹54999</span>
+          <span class="original-price">₹69999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Asus laptops-->
+  <div class="col-md-3 col-6 product-card" data-brand="asus" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/asus_zenbook.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Asus ZenBook 13</h5>
+        <p class="card-text">Ultraportable laptop with OLED display.</p>
+        <div class="price-container">
+          <span class="current-price">₹57999</span>
+          <span class="original-price">₹72999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="asus" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/asus_zenbook.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Asus ZenBook 13</h5>
+        <p class="card-text">Ultraportable laptop with OLED display.</p>
+        <div class="price-container">
+          <span class="current-price">₹57999</span>
+          <span class="original-price">₹72999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="asus" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/asus_zenbook.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Asus ZenBook 13</h5>
+        <p class="card-text">Ultraportable laptop with OLED display.</p>
+        <div class="price-container">
+          <span class="current-price">₹57999</span>
+          <span class="original-price">₹72999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="asus" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/asus_zenbook.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Asus ZenBook 13</h5>
+        <p class="card-text">Ultraportable laptop with OLED display.</p>
+        <div class="price-container">
+          <span class="current-price">₹57999</span>
+          <span class="original-price">₹72999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="asus" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/asus_zenbook.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Asus ZenBook 13</h5>
+        <p class="card-text">Ultraportable laptop with OLED display.</p>
+        <div class="price-container">
+          <span class="current-price">₹57999</span>
+          <span class="original-price">₹72999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="asus" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/asus_zenbook.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Asus ZenBook 13</h5>
+        <p class="card-text">Ultraportable laptop with OLED display.</p>
+        <div class="price-container">
+          <span class="current-price">₹57999</span>
+          <span class="original-price">₹72999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="asus" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/asus_zenbook.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Asus ZenBook 13</h5>
+        <p class="card-text">Ultraportable laptop with OLED display.</p>
+        <div class="price-container">
+          <span class="current-price">₹57999</span>
+          <span class="original-price">₹72999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="asus" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/asus_zenbook.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Asus ZenBook 13</h5>
+        <p class="card-text">Ultraportable laptop with OLED display.</p>
+        <div class="price-container">
+          <span class="current-price">₹57999</span>
+          <span class="original-price">₹72999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="asus" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/asus_zenbook.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Asus ZenBook 13</h5>
+        <p class="card-text">Ultraportable laptop with OLED display.</p>
+        <div class="price-container">
+          <span class="current-price">₹57999</span>
+          <span class="original-price">₹72999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="asus" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/asus_zenbook.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Asus ZenBook 13</h5>
+        <p class="card-text">Ultraportable laptop with OLED display.</p>
+        <div class="price-container">
+          <span class="current-price">₹57999</span>
+          <span class="original-price">₹72999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Lenovo laptops-->
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/lenovo_ideapad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo IdeaPad Slim 3</h5>
+        <p class="card-text">Affordable performance with stylish design.</p>
+        <div class="price-container">
+          <span class="current-price">₹44999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/lenovo_ideapad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo IdeaPad Slim 3</h5>
+        <p class="card-text">Affordable performance with stylish design.</p>
+        <div class="price-container">
+          <span class="current-price">₹44999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/lenovo_ideapad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo IdeaPad Slim 3</h5>
+        <p class="card-text">Affordable performance with stylish design.</p>
+        <div class="price-container">
+          <span class="current-price">₹44999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/lenovo_ideapad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo IdeaPad Slim 3</h5>
+        <p class="card-text">Affordable performance with stylish design.</p>
+        <div class="price-container">
+          <span class="current-price">₹44999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/lenovo_ideapad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo IdeaPad Slim 3</h5>
+        <p class="card-text">Affordable performance with stylish design.</p>
+        <div class="price-container">
+          <span class="current-price">₹44999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/lenovo_ideapad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo IdeaPad Slim 3</h5>
+        <p class="card-text">Affordable performance with stylish design.</p>
+        <div class="price-container">
+          <span class="current-price">₹44999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/lenovo_ideapad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo IdeaPad Slim 3</h5>
+        <p class="card-text">Affordable performance with stylish design.</p>
+        <div class="price-container">
+          <span class="current-price">₹44999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/lenovo_ideapad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo IdeaPad Slim 3</h5>
+        <p class="card-text">Affordable performance with stylish design.</p>
+        <div class="price-container">
+          <span class="current-price">₹44999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/lenovo_ideapad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo IdeaPad Slim 3</h5>
+        <p class="card-text">Affordable performance with stylish design.</p>
+        <div class="price-container">
+          <span class="current-price">₹44999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/lenovo_ideapad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo IdeaPad Slim 3</h5>
+        <p class="card-text">Affordable performance with stylish design.</p>
+        <div class="price-container">
+          <span class="current-price">₹44999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--MSI laptops-->
+  <div class="col-md-3 col-6 product-card" data-brand="msi" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/msi_gf63.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">MSI GF63 Thin</h5>
+        <p class="card-text">Gaming-ready with Intel i7 and GTX 1650.</p>
+        <div class="price-container">
+          <span class="current-price">₹59999</span>
+          <span class="original-price">₹74999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="msi" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/msi_gf63.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">MSI GF63 Thin</h5>
+        <p class="card-text">Gaming-ready with Intel i7 and GTX 1650.</p>
+        <div class="price-container">
+          <span class="current-price">₹59999</span>
+          <span class="original-price">₹74999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="msi" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/msi_gf63.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">MSI GF63 Thin</h5>
+        <p class="card-text">Gaming-ready with Intel i7 and GTX 1650.</p>
+        <div class="price-container">
+          <span class="current-price">₹59999</span>
+          <span class="original-price">₹74999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="msi" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/msi_gf63.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">MSI GF63 Thin</h5>
+        <p class="card-text">Gaming-ready with Intel i7 and GTX 1650.</p>
+        <div class="price-container">
+          <span class="current-price">₹59999</span>
+          <span class="original-price">₹74999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="msi" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/msi_gf63.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">MSI GF63 Thin</h5>
+        <p class="card-text">Gaming-ready with Intel i7 and GTX 1650.</p>
+        <div class="price-container">
+          <span class="current-price">₹59999</span>
+          <span class="original-price">₹74999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="msi" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/msi_gf63.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">MSI GF63 Thin</h5>
+        <p class="card-text">Gaming-ready with Intel i7 and GTX 1650.</p>
+        <div class="price-container">
+          <span class="current-price">₹59999</span>
+          <span class="original-price">₹74999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="msi" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/msi_gf63.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">MSI GF63 Thin</h5>
+        <p class="card-text">Gaming-ready with Intel i7 and GTX 1650.</p>
+        <div class="price-container">
+          <span class="current-price">₹59999</span>
+          <span class="original-price">₹74999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="msi" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/msi_gf63.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">MSI GF63 Thin</h5>
+        <p class="card-text">Gaming-ready with Intel i7 and GTX 1650.</p>
+        <div class="price-container">
+          <span class="current-price">₹59999</span>
+          <span class="original-price">₹74999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="msi" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/msi_gf63.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">MSI GF63 Thin</h5>
+        <p class="card-text">Gaming-ready with Intel i7 and GTX 1650.</p>
+        <div class="price-container">
+          <span class="current-price">₹59999</span>
+          <span class="original-price">₹74999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="msi" data-category="laptop">
+    <div class="card h-100">
+      <img src="images/msi_gf63.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">MSI GF63 Thin</h5>
+        <p class="card-text">Gaming-ready with Intel i7 and GTX 1650.</p>
+        <div class="price-container">
+          <span class="current-price">₹59999</span>
+          <span class="original-price">₹74999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Ensure Product Type and Availability filters show -->
+<div class="product-card d-none" data-brand="default" data-category="product type"></div>
+<div class="product-card d-none" data-brand="default" data-category="availability"></div>
+</template>
+
+<template id="tabletProducts">
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/ipad_pro_12.9.jpg" class="card-img-top" alt="iPad Pro 12.9">
+      <div class="card-body">
+        <h5 class="card-title">iPad Pro 12.9</h5>
+        <p class="card-text">Powerful tablet with M1 chip and Liquid Retina XDR.</p>
+        <div class="price-container">
+          <span class="current-price">₹99999</span>
+          <span class="original-price">₹129999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/ipad_air_5.jpg" class="card-img-top" alt="iPad Air 5">
+      <div class="card-body">
+        <h5 class="card-title">iPad Air 5</h5>
+        <p class="card-text">Versatile iPad with M1 chip and center stage.</p>
+        <div class="price-container">
+          <span class="current-price">₹61999</span>
+          <span class="original-price">₹74999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/ipad_9th_gen.jpg" class="card-img-top" alt="iPad 9th Gen">
+      <div class="card-body">
+        <h5 class="card-title">iPad 9th Gen</h5>
+        <p class="card-text">Classic design with A13 Bionic performance.</p>
+        <div class="price-container">
+          <span class="current-price">₹29999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/ipad_mini_6.jpg" class="card-img-top" alt="iPad Mini 6">
+      <div class="card-body">
+        <h5 class="card-title">iPad Mini 6</h5>
+        <p class="card-text">Compact powerhouse with A15 chip and USB-C.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/ipad_8th_gen.jpg" class="card-img-top" alt="iPad 8th Gen">
+      <div class="card-body">
+        <h5 class="card-title">iPad 8th Gen</h5>
+        <p class="card-text">Affordable tablet with A12 chip and Touch ID.</p>
+        <div class="price-container">
+          <span class="current-price">₹26999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/ipad_pro_11.jpg" class="card-img-top" alt="iPad Pro 11">
+      <div class="card-body">
+        <h5 class="card-title">iPad Pro 11</h5>
+        <p class="card-text">Portable Pro with ProMotion and Face ID.</p>
+        <div class="price-container">
+          <span class="current-price">₹84999</span>
+          <span class="original-price">₹109999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/ipad_air_4.jpg" class="card-img-top" alt="iPad Air 4">
+      <div class="card-body">
+        <h5 class="card-title">iPad Air 4</h5>
+        <p class="card-text">All-screen design and A14 chip power.</p>
+        <div class="price-container">
+          <span class="current-price">₹45999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/ipad_7th_gen.jpg" class="card-img-top" alt="iPad 7th Gen">
+      <div class="card-body">
+        <h5 class="card-title">iPad 7th Gen</h5>
+        <p class="card-text">Budget-friendly iPad with 10.2-inch display.</p>
+        <div class="price-container">
+          <span class="current-price">₹22999</span>
+          <span class="original-price">₹31999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/ipad_pro_10.5.jpg" class="card-img-top" alt="iPad Pro 10.5">
+      <div class="card-body">
+        <h5 class="card-title">iPad Pro 10.5</h5>
+        <p class="card-text">Smooth performance and P3 wide color.</p>
+        <div class="price-container">
+          <span class="current-price">₹37999</span>
+          <span class="original-price">₹54999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Samsung Tablets-->
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/galaxy_tab_s7.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Tab S7</h5>
+        <p class="card-text">Powerful S Pen tablet with 120Hz LCD.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/galaxy_tab_s7.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Tab S7</h5>
+        <p class="card-text">Powerful S Pen tablet with 120Hz LCD.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/galaxy_tab_s7.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Tab S7</h5>
+        <p class="card-text">Powerful S Pen tablet with 120Hz LCD.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/galaxy_tab_s7.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Tab S7</h5>
+        <p class="card-text">Powerful S Pen tablet with 120Hz LCD.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/galaxy_tab_s7.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Tab S7</h5>
+        <p class="card-text">Powerful S Pen tablet with 120Hz LCD.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/galaxy_tab_s7.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Tab S7</h5>
+        <p class="card-text">Powerful S Pen tablet with 120Hz LCD.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/galaxy_tab_s7.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Tab S7</h5>
+        <p class="card-text">Powerful S Pen tablet with 120Hz LCD.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/galaxy_tab_s7.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Tab S7</h5>
+        <p class="card-text">Powerful S Pen tablet with 120Hz LCD.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/galaxy_tab_s7.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Tab S7</h5>
+        <p class="card-text">Powerful S Pen tablet with 120Hz LCD.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/galaxy_tab_s7.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Tab S7</h5>
+        <p class="card-text">Powerful S Pen tablet with 120Hz LCD.</p>
+        <div class="price-container">
+          <span class="current-price">₹48999</span>
+          <span class="original-price">₹59999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Xiaomi Tablets-->
+  <div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/xiaomi_pad_5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Xiaomi Pad 5</h5>
+        <p class="card-text">11" 2.5K display with Snapdragon 860.</p>
+        <div class="price-container">
+          <span class="current-price">₹26999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/xiaomi_pad_5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Xiaomi Pad 5</h5>
+        <p class="card-text">11" 2.5K display with Snapdragon 860.</p>
+        <div class="price-container">
+          <span class="current-price">₹26999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/xiaomi_pad_5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Xiaomi Pad 5</h5>
+        <p class="card-text">11" 2.5K display with Snapdragon 860.</p>
+        <div class="price-container">
+          <span class="current-price">₹26999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/xiaomi_pad_5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Xiaomi Pad 5</h5>
+        <p class="card-text">11" 2.5K display with Snapdragon 860.</p>
+        <div class="price-container">
+          <span class="current-price">₹26999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/xiaomi_pad_5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Xiaomi Pad 5</h5>
+        <p class="card-text">11" 2.5K display with Snapdragon 860.</p>
+        <div class="price-container">
+          <span class="current-price">₹26999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/xiaomi_pad_5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Xiaomi Pad 5</h5>
+        <p class="card-text">11" 2.5K display with Snapdragon 860.</p>
+        <div class="price-container">
+          <span class="current-price">₹26999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/xiaomi_pad_5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Xiaomi Pad 5</h5>
+        <p class="card-text">11" 2.5K display with Snapdragon 860.</p>
+        <div class="price-container">
+          <span class="current-price">₹26999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/xiaomi_pad_5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Xiaomi Pad 5</h5>
+        <p class="card-text">11" 2.5K display with Snapdragon 860.</p>
+        <div class="price-container">
+          <span class="current-price">₹26999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/xiaomi_pad_5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Xiaomi Pad 5</h5>
+        <p class="card-text">11" 2.5K display with Snapdragon 860.</p>
+        <div class="price-container">
+          <span class="current-price">₹26999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="xiaomi" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/xiaomi_pad_5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Xiaomi Pad 5</h5>
+        <p class="card-text">11" 2.5K display with Snapdragon 860.</p>
+        <div class="price-container">
+          <span class="current-price">₹26999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--oppo tablets-->
+  <!-- Oppo Tablets -->
+  <div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/oppo_pad_air.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Oppo Pad Air</h5>
+        <p class="card-text">Sleek design with Snapdragon 680 chip.</p>
+        <div class="price-container">
+          <span class="current-price">₹17999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Oppo Tablets -->
+  <div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/oppo_pad_air.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Oppo Pad Air</h5>
+        <p class="card-text">Sleek design with Snapdragon 680 chip.</p>
+        <div class="price-container">
+          <span class="current-price">₹17999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Oppo Tablets -->
+  <div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/oppo_pad_air.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Oppo Pad Air</h5>
+        <p class="card-text">Sleek design with Snapdragon 680 chip.</p>
+        <div class="price-container">
+          <span class="current-price">₹17999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Oppo Tablets -->
+  <div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/oppo_pad_air.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Oppo Pad Air</h5>
+        <p class="card-text">Sleek design with Snapdragon 680 chip.</p>
+        <div class="price-container">
+          <span class="current-price">₹17999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Oppo Tablets -->
+  <div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/oppo_pad_air.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Oppo Pad Air</h5>
+        <p class="card-text">Sleek design with Snapdragon 680 chip.</p>
+        <div class="price-container">
+          <span class="current-price">₹17999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Oppo Tablets -->
+  <div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/oppo_pad_air.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Oppo Pad Air</h5>
+        <p class="card-text">Sleek design with Snapdragon 680 chip.</p>
+        <div class="price-container">
+          <span class="current-price">₹17999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Oppo Tablets -->
+  <div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/oppo_pad_air.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Oppo Pad Air</h5>
+        <p class="card-text">Sleek design with Snapdragon 680 chip.</p>
+        <div class="price-container">
+          <span class="current-price">₹17999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Oppo Tablets -->
+  <div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/oppo_pad_air.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Oppo Pad Air</h5>
+        <p class="card-text">Sleek design with Snapdragon 680 chip.</p>
+        <div class="price-container">
+          <span class="current-price">₹17999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Oppo Tablets -->
+  <div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/oppo_pad_air.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Oppo Pad Air</h5>
+        <p class="card-text">Sleek design with Snapdragon 680 chip.</p>
+        <div class="price-container">
+          <span class="current-price">₹17999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Oppo Tablets -->
+  <div class="col-md-3 col-6 product-card" data-brand="oppo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/oppo_pad_air.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Oppo Pad Air</h5>
+        <p class="card-text">Sleek design with Snapdragon 680 chip.</p>
+        <div class="price-container">
+          <span class="current-price">₹17999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Realme Tablets-->
+  <div class="col-md-3 col-6 product-card" data-brand="realme" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/realme_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Realme Pad</h5>
+        <p class="card-text">10.4" WUXGA+ display with Dolby Atmos.</p>
+        <div class="price-container">
+          <span class="current-price">₹15999</span>
+          <span class="original-price">₹20999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="realme" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/realme_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Realme Pad</h5>
+        <p class="card-text">10.4" WUXGA+ display with Dolby Atmos.</p>
+        <div class="price-container">
+          <span class="current-price">₹15999</span>
+          <span class="original-price">₹20999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="realme" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/realme_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Realme Pad</h5>
+        <p class="card-text">10.4" WUXGA+ display with Dolby Atmos.</p>
+        <div class="price-container">
+          <span class="current-price">₹15999</span>
+          <span class="original-price">₹20999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="realme" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/realme_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Realme Pad</h5>
+        <p class="card-text">10.4" WUXGA+ display with Dolby Atmos.</p>
+        <div class="price-container">
+          <span class="current-price">₹15999</span>
+          <span class="original-price">₹20999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="realme" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/realme_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Realme Pad</h5>
+        <p class="card-text">10.4" WUXGA+ display with Dolby Atmos.</p>
+        <div class="price-container">
+          <span class="current-price">₹15999</span>
+          <span class="original-price">₹20999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="realme" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/realme_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Realme Pad</h5>
+        <p class="card-text">10.4" WUXGA+ display with Dolby Atmos.</p>
+        <div class="price-container">
+          <span class="current-price">₹15999</span>
+          <span class="original-price">₹20999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="realme" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/realme_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Realme Pad</h5>
+        <p class="card-text">10.4" WUXGA+ display with Dolby Atmos.</p>
+        <div class="price-container">
+          <span class="current-price">₹15999</span>
+          <span class="original-price">₹20999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="realme" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/realme_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Realme Pad</h5>
+        <p class="card-text">10.4" WUXGA+ display with Dolby Atmos.</p>
+        <div class="price-container">
+          <span class="current-price">₹15999</span>
+          <span class="original-price">₹20999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="realme" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/realme_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Realme Pad</h5>
+        <p class="card-text">10.4" WUXGA+ display with Dolby Atmos.</p>
+        <div class="price-container">
+          <span class="current-price">₹15999</span>
+          <span class="original-price">₹20999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="realme" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/realme_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Realme Pad</h5>
+        <p class="card-text">10.4" WUXGA+ display with Dolby Atmos.</p>
+        <div class="price-container">
+          <span class="current-price">₹15999</span>
+          <span class="original-price">₹20999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Lenovo Tablets-->
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/lenovo_tab_m10.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo Tab M10</h5>
+        <p class="card-text">Kid-friendly tablet with family sharing mode.</p>
+        <div class="price-container">
+          <span class="current-price">₹13499</span>
+          <span class="original-price">₹17999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/lenovo_tab_m10.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo Tab M10</h5>
+        <p class="card-text">Kid-friendly tablet with family sharing mode.</p>
+        <div class="price-container">
+          <span class="current-price">₹13499</span>
+          <span class="original-price">₹17999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/lenovo_tab_m10.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo Tab M10</h5>
+        <p class="card-text">Kid-friendly tablet with family sharing mode.</p>
+        <div class="price-container">
+          <span class="current-price">₹13499</span>
+          <span class="original-price">₹17999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/lenovo_tab_m10.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo Tab M10</h5>
+        <p class="card-text">Kid-friendly tablet with family sharing mode.</p>
+        <div class="price-container">
+          <span class="current-price">₹13499</span>
+          <span class="original-price">₹17999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/lenovo_tab_m10.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo Tab M10</h5>
+        <p class="card-text">Kid-friendly tablet with family sharing mode.</p>
+        <div class="price-container">
+          <span class="current-price">₹13499</span>
+          <span class="original-price">₹17999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/lenovo_tab_m10.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo Tab M10</h5>
+        <p class="card-text">Kid-friendly tablet with family sharing mode.</p>
+        <div class="price-container">
+          <span class="current-price">₹13499</span>
+          <span class="original-price">₹17999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/lenovo_tab_m10.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo Tab M10</h5>
+        <p class="card-text">Kid-friendly tablet with family sharing mode.</p>
+        <div class="price-container">
+          <span class="current-price">₹13499</span>
+          <span class="original-price">₹17999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/lenovo_tab_m10.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo Tab M10</h5>
+        <p class="card-text">Kid-friendly tablet with family sharing mode.</p>
+        <div class="price-container">
+          <span class="current-price">₹13499</span>
+          <span class="original-price">₹17999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/lenovo_tab_m10.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo Tab M10</h5>
+        <p class="card-text">Kid-friendly tablet with family sharing mode.</p>
+        <div class="price-container">
+          <span class="current-price">₹13499</span>
+          <span class="original-price">₹17999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="lenovo" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/lenovo_tab_m10.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Lenovo Tab M10</h5>
+        <p class="card-text">Kid-friendly tablet with family sharing mode.</p>
+        <div class="price-container">
+          <span class="current-price">₹13499</span>
+          <span class="original-price">₹17999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Other brands tablets-->
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/honor_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Honor Pad X8</h5>
+        <p class="card-text">Lightweight with Full HD display.</p>
+        <div class="price-container">
+          <span class="current-price">₹12999</span>
+          <span class="original-price">₹15999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/honor_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Honor Pad X8</h5>
+        <p class="card-text">Lightweight with Full HD display.</p>
+        <div class="price-container">
+          <span class="current-price">₹12999</span>
+          <span class="original-price">₹15999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/honor_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Honor Pad X8</h5>
+        <p class="card-text">Lightweight with Full HD display.</p>
+        <div class="price-container">
+          <span class="current-price">₹12999</span>
+          <span class="original-price">₹15999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/honor_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Honor Pad X8</h5>
+        <p class="card-text">Lightweight with Full HD display.</p>
+        <div class="price-container">
+          <span class="current-price">₹12999</span>
+          <span class="original-price">₹15999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/honor_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Honor Pad X8</h5>
+        <p class="card-text">Lightweight with Full HD display.</p>
+        <div class="price-container">
+          <span class="current-price">₹12999</span>
+          <span class="original-price">₹15999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/honor_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Honor Pad X8</h5>
+        <p class="card-text">Lightweight with Full HD display.</p>
+        <div class="price-container">
+          <span class="current-price">₹12999</span>
+          <span class="original-price">₹15999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/honor_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Honor Pad X8</h5>
+        <p class="card-text">Lightweight with Full HD display.</p>
+        <div class="price-container">
+          <span class="current-price">₹12999</span>
+          <span class="original-price">₹15999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/honor_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Honor Pad X8</h5>
+        <p class="card-text">Lightweight with Full HD display.</p>
+        <div class="price-container">
+          <span class="current-price">₹12999</span>
+          <span class="original-price">₹15999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/honor_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Honor Pad X8</h5>
+        <p class="card-text">Lightweight with Full HD display.</p>
+        <div class="price-container">
+          <span class="current-price">₹12999</span>
+          <span class="original-price">₹15999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="tablet">
+    <div class="card h-100">
+      <img src="images/honor_pad.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Honor Pad X8</h5>
+        <p class="card-text">Lightweight with Full HD display.</p>
+        <div class="price-container">
+          <span class="current-price">₹12999</span>
+          <span class="original-price">₹15999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Ensure Product Type and Availability filters show -->
+<div class="product-card d-none" data-brand="default" data-category="product type"></div>
+<div class="product-card d-none" data-brand="default" data-category="availability"></div>
+</template>
+<!--Watch products-->
+<template id="watchProducts">
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="watch">
+    <div class="card h-100">
+      <img src="images/apple_watch_8.jpg" class="card-img-top" alt="Apple Watch Series 8">
+      <div class="card-body">
+        <h5 class="card-title">Apple Watch Series 8</h5>
+        <p class="card-text">Advanced health sensors and crash detection.</p>
+        <div class="price-container">
+          <span class="current-price">₹39999</span>
+          <span class="original-price">₹49999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="watch">
+    <div class="card h-100">
+      <img src="images/apple_watch_7.jpg" class="card-img-top" alt="Apple Watch Series 7">
+      <div class="card-body">
+        <h5 class="card-title">Apple Watch Series 7</h5>
+        <p class="card-text">Larger display and fast charging.</p>
+        <div class="price-container">
+          <span class="current-price">₹34999</span>
+          <span class="original-price">₹45999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="watch">
+    <div class="card h-100">
+      <img src="images/apple_watch_se.jpg" class="card-img-top" alt="Apple Watch SE">
+      <div class="card-body">
+        <h5 class="card-title">Apple Watch SE</h5>
+        <p class="card-text">Affordable and full of essential features.</p>
+        <div class="price-container">
+          <span class="current-price">₹27999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="watch">
+    <div class="card h-100">
+      <img src="images/apple_watch_6.jpg" class="card-img-top" alt="Apple Watch Series 6">
+      <div class="card-body">
+        <h5 class="card-title">Apple Watch Series 6</h5>
+        <p class="card-text">Blood oxygen sensor and always-on display.</p>
+        <div class="price-container">
+          <span class="current-price">₹29999</span>
+          <span class="original-price">₹39999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="watch">
+    <div class="card h-100">
+      <img src="images/apple_watch_5.jpg" class="card-img-top" alt="Apple Watch Series 5">
+      <div class="card-body">
+        <h5 class="card-title">Apple Watch Series 5</h5>
+        <p class="card-text">Always-on display and compass.</p>
+        <div class="price-container">
+          <span class="current-price">₹25999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="watch">
+    <div class="card h-100">
+      <img src="images/apple_watch_4.jpg" class="card-img-top" alt="Apple Watch Series 4">
+      <div class="card-body">
+        <h5 class="card-title">Apple Watch Series 4</h5>
+        <p class="card-text">ECG capability and new design.</p>
+        <div class="price-container">
+          <span class="current-price">₹21999</span>
+          <span class="original-price">₹29999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="watch">
+    <div class="card h-100">
+      <img src="images/apple_watch_3.jpg" class="card-img-top" alt="Apple Watch Series 3">
+      <div class="card-body">
+        <h5 class="card-title">Apple Watch Series 3</h5>
+        <p class="card-text">Entry-level smart features and fitness tracking.</p>
+        <div class="price-container">
+          <span class="current-price">₹14999</span>
+          <span class="original-price">₹19999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="watch">
+    <div class="card h-100">
+      <img src="images/apple_watch_ultra.jpg" class="card-img-top" alt="Apple Watch Ultra">
+      <div class="card-body">
+        <h5 class="card-title">Apple Watch Ultra</h5>
+        <p class="card-text">Rugged watch built for extreme adventures.</p>
+        <div class="price-container">
+          <span class="current-price">₹84999</span>
+          <span class="original-price">₹99999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="watch">
+    <div class="card h-100">
+      <img src="images/apple_watch_nike.jpg" class="card-img-top" alt="Apple Watch Nike Edition">
+      <div class="card-body">
+        <h5 class="card-title">Apple Watch Nike Edition</h5>
+        <p class="card-text">Sporty look and Nike Run Club features.</p>
+        <div class="price-container">
+          <span class="current-price">₹31999</span>
+          <span class="original-price">₹42999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="apple" data-category="watch">
+    <div class="card h-100">
+      <img src="images/apple_watch_hermes.jpg" class="card-img-top" alt="Apple Watch Hermès">
+      <div class="card-body">
+        <h5 class="card-title">Apple Watch Hermès</h5>
+        <p class="card-text">Luxury styling with exclusive bands and faces.</p>
+        <div class="price-container">
+          <span class="current-price">₹119999</span>
+          <span class="original-price">₹139999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="watch">
+    <div class="card h-100">
+      <img src="images/galaxy_watch5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Watch 5</h5>
+        <p class="card-text">Advanced tracking and Wear OS integration.</p>
+        <div class="price-container">
+          <span class="current-price">₹24999</span>
+          <span class="original-price">₹29999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="watch">
+    <div class="card h-100">
+      <img src="images/galaxy_watch5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Watch 5</h5>
+        <p class="card-text">Advanced tracking and Wear OS integration.</p>
+        <div class="price-container">
+          <span class="current-price">₹24999</span>
+          <span class="original-price">₹29999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="watch">
+    <div class="card h-100">
+      <img src="images/galaxy_watch5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Watch 5</h5>
+        <p class="card-text">Advanced tracking and Wear OS integration.</p>
+        <div class="price-container">
+          <span class="current-price">₹24999</span>
+          <span class="original-price">₹29999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="watch">
+    <div class="card h-100">
+      <img src="images/galaxy_watch5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Watch 5</h5>
+        <p class="card-text">Advanced tracking and Wear OS integration.</p>
+        <div class="price-container">
+          <span class="current-price">₹24999</span>
+          <span class="original-price">₹29999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="watch">
+    <div class="card h-100">
+      <img src="images/galaxy_watch5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Watch 5</h5>
+        <p class="card-text">Advanced tracking and Wear OS integration.</p>
+        <div class="price-container">
+          <span class="current-price">₹24999</span>
+          <span class="original-price">₹29999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="watch">
+    <div class="card h-100">
+      <img src="images/galaxy_watch5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Watch 5</h5>
+        <p class="card-text">Advanced tracking and Wear OS integration.</p>
+        <div class="price-container">
+          <span class="current-price">₹24999</span>
+          <span class="original-price">₹29999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="watch">
+    <div class="card h-100">
+      <img src="images/galaxy_watch5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Watch 5</h5>
+        <p class="card-text">Advanced tracking and Wear OS integration.</p>
+        <div class="price-container">
+          <span class="current-price">₹24999</span>
+          <span class="original-price">₹29999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="watch">
+    <div class="card h-100">
+      <img src="images/galaxy_watch5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Watch 5</h5>
+        <p class="card-text">Advanced tracking and Wear OS integration.</p>
+        <div class="price-container">
+          <span class="current-price">₹24999</span>
+          <span class="original-price">₹29999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="watch">
+    <div class="card h-100">
+      <img src="images/galaxy_watch5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Watch 5</h5>
+        <p class="card-text">Advanced tracking and Wear OS integration.</p>
+        <div class="price-container">
+          <span class="current-price">₹24999</span>
+          <span class="original-price">₹29999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="samsung" data-category="watch">
+    <div class="card h-100">
+      <img src="images/galaxy_watch5.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Galaxy Watch 5</h5>
+        <p class="card-text">Advanced tracking and Wear OS integration.</p>
+        <div class="price-container">
+          <span class="current-price">₹24999</span>
+          <span class="original-price">₹29999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Google watches-->
+  <div class="col-md-3 col-6 product-card" data-brand="google" data-category="watch">
+    <div class="card h-100">
+      <img src="images/pixel_watch.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Google Pixel Watch</h5>
+        <p class="card-text">Seamless Fitbit integration with sleek design.</p>
+        <div class="price-container">
+          <span class="current-price">₹28999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="google" data-category="watch">
+    <div class="card h-100">
+      <img src="images/pixel_watch.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Google Pixel Watch</h5>
+        <p class="card-text">Seamless Fitbit integration with sleek design.</p>
+        <div class="price-container">
+          <span class="current-price">₹28999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="google" data-category="watch">
+    <div class="card h-100">
+      <img src="images/pixel_watch.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Google Pixel Watch</h5>
+        <p class="card-text">Seamless Fitbit integration with sleek design.</p>
+        <div class="price-container">
+          <span class="current-price">₹28999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="google" data-category="watch">
+    <div class="card h-100">
+      <img src="images/pixel_watch.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Google Pixel Watch</h5>
+        <p class="card-text">Seamless Fitbit integration with sleek design.</p>
+        <div class="price-container">
+          <span class="current-price">₹28999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="google" data-category="watch">
+    <div class="card h-100">
+      <img src="images/pixel_watch.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Google Pixel Watch</h5>
+        <p class="card-text">Seamless Fitbit integration with sleek design.</p>
+        <div class="price-container">
+          <span class="current-price">₹28999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="google" data-category="watch">
+    <div class="card h-100">
+      <img src="images/pixel_watch.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Google Pixel Watch</h5>
+        <p class="card-text">Seamless Fitbit integration with sleek design.</p>
+        <div class="price-container">
+          <span class="current-price">₹28999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="google" data-category="watch">
+    <div class="card h-100">
+      <img src="images/pixel_watch.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Google Pixel Watch</h5>
+        <p class="card-text">Seamless Fitbit integration with sleek design.</p>
+        <div class="price-container">
+          <span class="current-price">₹28999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="google" data-category="watch">
+    <div class="card h-100">
+      <img src="images/pixel_watch.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Google Pixel Watch</h5>
+        <p class="card-text">Seamless Fitbit integration with sleek design.</p>
+        <div class="price-container">
+          <span class="current-price">₹28999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="google" data-category="watch">
+    <div class="card h-100">
+      <img src="images/pixel_watch.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Google Pixel Watch</h5>
+        <p class="card-text">Seamless Fitbit integration with sleek design.</p>
+        <div class="price-container">
+          <span class="current-price">₹28999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="google" data-category="watch">
+    <div class="card h-100">
+      <img src="images/pixel_watch.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Google Pixel Watch</h5>
+        <p class="card-text">Seamless Fitbit integration with sleek design.</p>
+        <div class="price-container">
+          <span class="current-price">₹28999</span>
+          <span class="original-price">₹34999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Huawei watches-->
+  <div class="col-md-3 col-6 product-card" data-brand="huawei" data-category="watch">
+    <div class="card h-100">
+      <img src="images/huawei_watch_gt3.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Huawei Watch GT 3</h5>
+        <p class="card-text">Long battery life and fitness features.</p>
+        <div class="price-container">
+          <span class="current-price">₹19999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="huawei" data-category="watch">
+    <div class="card h-100">
+      <img src="images/huawei_watch_gt3.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Huawei Watch GT 3</h5>
+        <p class="card-text">Long battery life and fitness features.</p>
+        <div class="price-container">
+          <span class="current-price">₹19999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="huawei" data-category="watch">
+    <div class="card h-100">
+      <img src="images/huawei_watch_gt3.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Huawei Watch GT 3</h5>
+        <p class="card-text">Long battery life and fitness features.</p>
+        <div class="price-container">
+          <span class="current-price">₹19999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="huawei" data-category="watch">
+    <div class="card h-100">
+      <img src="images/huawei_watch_gt3.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Huawei Watch GT 3</h5>
+        <p class="card-text">Long battery life and fitness features.</p>
+        <div class="price-container">
+          <span class="current-price">₹19999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="huawei" data-category="watch">
+    <div class="card h-100">
+      <img src="images/huawei_watch_gt3.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Huawei Watch GT 3</h5>
+        <p class="card-text">Long battery life and fitness features.</p>
+        <div class="price-container">
+          <span class="current-price">₹19999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="huawei" data-category="watch">
+    <div class="card h-100">
+      <img src="images/huawei_watch_gt3.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Huawei Watch GT 3</h5>
+        <p class="card-text">Long battery life and fitness features.</p>
+        <div class="price-container">
+          <span class="current-price">₹19999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="huawei" data-category="watch">
+    <div class="card h-100">
+      <img src="images/huawei_watch_gt3.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Huawei Watch GT 3</h5>
+        <p class="card-text">Long battery life and fitness features.</p>
+        <div class="price-container">
+          <span class="current-price">₹19999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="huawei" data-category="watch">
+    <div class="card h-100">
+      <img src="images/huawei_watch_gt3.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Huawei Watch GT 3</h5>
+        <p class="card-text">Long battery life and fitness features.</p>
+        <div class="price-container">
+          <span class="current-price">₹19999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="huawei" data-category="watch">
+    <div class="card h-100">
+      <img src="images/huawei_watch_gt3.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Huawei Watch GT 3</h5>
+        <p class="card-text">Long battery life and fitness features.</p>
+        <div class="price-container">
+          <span class="current-price">₹19999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="huawei" data-category="watch">
+    <div class="card h-100">
+      <img src="images/huawei_watch_gt3.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Huawei Watch GT 3</h5>
+        <p class="card-text">Long battery life and fitness features.</p>
+        <div class="price-container">
+          <span class="current-price">₹19999</span>
+          <span class="original-price">₹24999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--other brands watches-->
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="watch">
+    <div class="card h-100">
+      <img src="images/boat_watch_xtend.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">boAt Xtend Smartwatch</h5>
+        <p class="card-text">Affordable smartwatch with Alexa support.</p>
+        <div class="price-container">
+          <span class="current-price">₹2999</span>
+          <span class="original-price">₹4999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="watch">
+    <div class="card h-100">
+      <img src="images/boat_watch_xtend.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">boAt Xtend Smartwatch</h5>
+        <p class="card-text">Affordable smartwatch with Alexa support.</p>
+        <div class="price-container">
+          <span class="current-price">₹2999</span>
+          <span class="original-price">₹4999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="watch">
+    <div class="card h-100">
+      <img src="images/boat_watch_xtend.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">boAt Xtend Smartwatch</h5>
+        <p class="card-text">Affordable smartwatch with Alexa support.</p>
+        <div class="price-container">
+          <span class="current-price">₹2999</span>
+          <span class="original-price">₹4999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="watch">
+    <div class="card h-100">
+      <img src="images/boat_watch_xtend.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">boAt Xtend Smartwatch</h5>
+        <p class="card-text">Affordable smartwatch with Alexa support.</p>
+        <div class="price-container">
+          <span class="current-price">₹2999</span>
+          <span class="original-price">₹4999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="watch">
+    <div class="card h-100">
+      <img src="images/boat_watch_xtend.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">boAt Xtend Smartwatch</h5>
+        <p class="card-text">Affordable smartwatch with Alexa support.</p>
+        <div class="price-container">
+          <span class="current-price">₹2999</span>
+          <span class="original-price">₹4999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="watch">
+    <div class="card h-100">
+      <img src="images/boat_watch_xtend.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">boAt Xtend Smartwatch</h5>
+        <p class="card-text">Affordable smartwatch with Alexa support.</p>
+        <div class="price-container">
+          <span class="current-price">₹2999</span>
+          <span class="original-price">₹4999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="watch">
+    <div class="card h-100">
+      <img src="images/boat_watch_xtend.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">boAt Xtend Smartwatch</h5>
+        <p class="card-text">Affordable smartwatch with Alexa support.</p>
+        <div class="price-container">
+          <span class="current-price">₹2999</span>
+          <span class="original-price">₹4999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="watch">
+    <div class="card h-100">
+      <img src="images/boat_watch_xtend.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">boAt Xtend Smartwatch</h5>
+        <p class="card-text">Affordable smartwatch with Alexa support.</p>
+        <div class="price-container">
+          <span class="current-price">₹2999</span>
+          <span class="original-price">₹4999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="watch">
+    <div class="card h-100">
+      <img src="images/boat_watch_xtend.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">boAt Xtend Smartwatch</h5>
+        <p class="card-text">Affordable smartwatch with Alexa support.</p>
+        <div class="price-container">
+          <span class="current-price">₹2999</span>
+          <span class="original-price">₹4999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-6 product-card" data-brand="other brands" data-category="watch">
+    <div class="card h-100">
+      <img src="images/boat_watch_xtend.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">boAt Xtend Smartwatch</h5>
+        <p class="card-text">Affordable smartwatch with Alexa support.</p>
+        <div class="price-container">
+          <span class="current-price">₹2999</span>
+          <span class="original-price">₹4999</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Ensure Product Type and Availability filters show -->
+<div class="product-card d-none" data-brand="default" data-category="product type"></div>
+<div class="product-card d-none" data-brand="default" data-category="availability"></div>
+</template>
+<!-- These templates will feed both random homepage listings AND brand overlays. -->
+
+<!-- VISIBLE HOMEPAGE PRODUCT SECTIONS -->
+<!--Refurbished Phones view all & filter section-->
+<section class="featured-products" id="phoneSection">
+  <div class="container">
+    <div class="section-header mb-4">
+      <h2>Refurbished Phones</h2>
+      <button class="btn btn-cashify" onclick="openOverlay('phone')">View All</button>
+    </div>
+    <div class="product-grid" id="phoneContainer"></div>
+  </div>
+</section>
+
+<div id="phone-overlay" class="overlay">
+  <div class="overlay-content with-sidebar">
+    <div class="filter-sidebar">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="mb-0">Filters</h5>
+        <button class="btn btn-link p-0 m-0 text-decoration-none clear-filters-btn" onclick="clearOverlayFilters('phone')">Clear Filters</button>
+      </div>
+    
+      <div class="filter-group">
+        <p class="filter-title">Product Type</p>
+        <label><input type="checkbox" data-filter-type="category" value="phone" checked> Phone</label>
+      </div>
+    
+      <div class="filter-group">
+        <p class="filter-title">Availability</p>
+        <label><input type="checkbox" data-filter-type="availability" value="in-stock" checked> In Stock</label>
+      </div>
+    
+      <div class="filter-group">
+        <p class="filter-title">Brand</p>
+        <label><input type="checkbox" data-filter-type="brand" value="apple"> Apple</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="samsung"> Samsung</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="xiaomi"> Xiaomi</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="oneplus"> OnePlus</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="google"> Google</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="oppo"> Oppo</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="vivo"> Vivo</label>
+      </div>
+    
+      <div class="filter-group">
+        <p class="filter-title">Price Range</p>
+        <div class="price-filter-box mb-2">
+          <label for="priceMinInput-phone" class="form-label">Min Price (₹)</label>
+          <input type="number" class="form-control" id="priceMinInput-phone" placeholder="e.g. 10000">
+        </div>
+        <div class="price-filter-box mb-2">
+          <label for="priceMaxInput-phone" class="form-label">Max Price (₹)</label>
+          <input type="number" class="form-control" id="priceMaxInput-phone" placeholder="e.g. 70000">
+        </div>
+      </div>
+
+    
+      <div class="overlay-footer text-end p-3">
+        <button class="btn btn-success" onclick="applyOverlayFilters('phone')">Apply Filter</button>
+      </div>
+    </div>
+     
+    <div class="overlay-main">
+      <span class="close-overlay" onclick="closeOverlay('phone')">&times;</span>
+      <h2>All Refurbished Phones</h2>
+      <div class="overlay-products" id="phone-overlay-products"></div>
+    </div>
+  </div>
+</div>
+<!-- Refurbished Laptops View All & Filter Section -->
+<section class="featured-products" id="laptopSection"> 
+  <div class="container">
+    <div class="section-header mb-4">
+      <h2>Refurbished Laptops</h2>
+      <button class="btn btn-cashify" onclick="openOverlay('laptop')">View All</button>
+    </div>
+    <div class="product-grid" id="laptopContainer"></div>
+  </div>
+</section>
+
+<!-- Corrected Overlay Structure -->
+<div id="laptop-overlay" class="overlay">
+  <div class="overlay-content with-sidebar">
+    
+    <!-- FILTER SIDEBAR -->
+    <div class="filter-sidebar">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="mb-0">Filters</h5>
+        <button class="btn btn-link p-0 m-0 text-decoration-none clear-filters-btn" onclick="clearOverlayFilters('laptop')">Clear Filters</button>
+      </div>
+    
+      <div class="filter-group">
+        <p class="filter-title">Product Type</p>
+        <label><input type="checkbox" data-filter-type="category" value="laptop" checked> Laptop</label>
+      </div>
+
+      <div class="filter-group">
+        <p class="filter-title">Availability</p>
+        <label><input type="checkbox" data-filter-type="availability" value="in-stock" checked> In Stock</label>
+      </div>
+
+      <div class="filter-group filter-brand">
+        <p class="filter-title">Brand</p>
+        <label><input type="checkbox" data-filter-type="brand" value="dell"> Dell</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="hp"> HP</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="lenovo"> Lenovo</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="asus"> Asus</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="acer"> Acer</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="apple"> Apple</label>
+      </div>
+    
+      <div class="filter-group">
+        <p class="filter-title">Price Range</p>
+        <div class="price-filter-box mb-2">
+          <label for="priceMinInput-laptop" class="form-label">Min Price (₹)</label>
+          <input type="number" class="form-control" id="priceMinInput-laptop" placeholder="e.g. 15000">
+        </div>
+        <div class="price-filter-box mb-2">
+          <label for="priceMaxInput-laptop" class="form-label">Max Price (₹)</label>
+          <input type="number" class="form-control" id="priceMaxInput-laptop" placeholder="e.g. 100000">
+        </div>
+      </div>
+
+
+      <div class="overlay-footer text-end p-3">
+        <button class="btn btn-success apply-filters-btn" onclick="applyOverlayFilters('laptop')">Apply Filter</button>
+
+      </div>
+    </div>
+
+    <!-- OVERLAY MAIN PRODUCT SECTION -->
+    <div class="overlay-main">
+      <span class="close-overlay" onclick="closeOverlay('laptop')">&times;</span>
+      <h2>All Refurbished Laptops</h2>
+      <div class="overlay-products" id="laptop-overlay-products"></div>
+    </div>
+
+  </div>
+</div>
+
+<!--Refurbished Tablets view all & filter section-->
+<section class="featured-products" id="tabletSection"> 
+  <div class="container">
+    <div class="section-header mb-4">
+      <h2>Refurbished Tablets</h2>
+      <button class="btn btn-cashify" onclick="openOverlay('tablet')">View All</button>
+    </div>
+    <div class="product-grid" id="tabletContainer"></div>
+  </div>
+</section>
+
+<div id="tablet-overlay" class="overlay">
+  <div class="overlay-content with-sidebar">
+    <div class="filter-sidebar">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="mb-0">Filters</h5>
+        <button class="btn btn-link p-0 m-0 text-decoration-none clear-filters-btn" onclick="clearOverlayFilters('tablet')">Clear Filters</button>
+      </div>
+    
+      <div class="filter-group">
+        <p class="filter-title">Product Type</p>
+        <label><input type="checkbox" data-filter-type="category" value="tablet" checked> Tablet</label>
+      </div>
+      <div class="filter-group">
+        <p class="filter-title">Availability</p>
+        <label><input type="checkbox" data-filter-type="availability" value="in-stock" checked> In Stock</label>
+      </div>
+      <div class="filter-group">
+        <p class="filter-title">Brand</p>
+        <label><input type="checkbox" data-filter-type="brand" value="apple"> Apple</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="samsung"> Samsung</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="realme"> Realme</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="xiaomi"> Xiaomi</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="lenovo"> Lenovo</label>
+      </div>
+    
+      <div class="filter-group">
+        <p class="filter-title">Price Range</p>
+        <div class="price-filter-box mb-2">
+          <label for="priceMinInput-tablet" class="form-label">Min Price (₹)</label>
+          <input type="number" class="form-control" id="priceMinInput-tablet" placeholder="e.g. 8000">
+        </div>
+        <div class="price-filter-box mb-2">
+          <label for="priceMaxInput-tablet" class="form-label">Max Price (₹)</label>
+          <input type="number" class="form-control" id="priceMaxInput-tablet" placeholder="e.g. 60000">
+        </div>
+      </div>
+
+      <div class="overlay-footer text-end p-3">
+        <button class="btn btn-success" onclick="applyOverlayFilters('tablet')">Apply Filter</button>
+      </div>
+    </div>
+    
+
+    <div class="overlay-main">
+      <span class="close-overlay" onclick="closeOverlay('tablet')">&times;</span>
+      <h2>All Refurbished Tablets</h2>
+      <div class="overlay-products" id="tablet-overlay-products"></div>
+    </div>
+  </div>
+</div>
+<!--Refurbished Smart Watches view all & filter section-->
+<section class="featured-products" id="watchSection"> 
+  <div class="container">
+    <div class="section-header mb-4">
+      <h2>Refurbished Smart Watches</h2>
+      <button class="btn btn-cashify" onclick="openOverlay('watch')">View All</button>
+    </div>
+    <div class="product-grid" id="watchContainer"></div>
+  </div>
+</section>
+
+<div id="watch-overlay" class="overlay">
+  <div class="overlay-content with-sidebar">
+    <div class="filter-sidebar">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="mb-0">Filters</h5>
+        <button class="btn btn-link p-0 m-0 text-decoration-none clear-filters-btn" onclick="clearOverlayFilters('watch')">Clear Filters</button>
+      </div>
+    
+      <div class="filter-group">
+        <p class="filter-title">Product Type</p>
+        <label><input type="checkbox" data-filter-type="category" value="watch" checked> Smart Watch</label>
+      </div>
+      <div class="filter-group">
+        <p class="filter-title">Availability</p>
+        <label><input type="checkbox" data-filter-type="availability" value="in-stock" checked> In Stock</label>
+      </div>
+      <div class="filter-group">
+        <p class="filter-title">Brand</p>
+        <label><input type="checkbox" data-filter-type="brand" value="apple"> Apple</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="samsung"> Samsung</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="google"> Google</label><br>
+        <label><input type="checkbox" data-filter-type="brand" value="huawei"> Huawei</label>
+      </div>
+    
+      <div class="filter-group">
+        <p class="filter-title">Price Range</p>
+        <div class="price-filter-box mb-2">
+          <label for="priceMinInput-watch" class="form-label">Min Price (₹)</label>
+          <input type="number" class="form-control" id="priceMinInput-watch" placeholder="e.g. 10000">
+        </div>
+        <div class="price-filter-box mb-2">
+          <label for="priceMaxInput-watch" class="form-label">Max Price (₹)</label>
+          <input type="number" class="form-control" id="priceMaxInput-watch" placeholder="e.g. 70000">
+        </div>
+      </div>
+
+      <div class="overlay-footer text-end p-3">
+        <button class="btn btn-success" onclick="applyOverlayFilters('watch')">Apply Filter</button>
+      </div>
+    </div>
+    
+
+    <div class="overlay-main">
+      <span class="close-overlay" onclick="closeOverlay('watch')">&times;</span>
+      <h2>All Refurbished Smart Watches</h2>
+      <div class="overlay-products" id="watch-overlay-products"></div>
+    </div>
+  </div>
+</div>
+
+<!-- About Buying Section -->
+<section class="buying-section py-5 bg-light">
+  <div class="container-fluid px-0"> <!-- Changed to container-fluid and removed padding -->
+    <div class="row">
+      <div class="col-12 px-4"> <!-- Full width column with side padding -->
+        <h2 class="mb-4">Buy Quality Refurbished Devices with RefurbTechHub</h2>
+        <p class="lead">Looking to buy premium refurbished mobile phones? RefurbTechHub has you covered! At RefurbTechHub, we provide a seamless experience to buy certified pre-owned devices at unbeatable prices.</p>
+        <p>With RefurbTechHub's smooth user experience, you can buy refurbished phones online with just a few clicks. Buying refurbished mobile phones is the best way to upgrade without causing a hole in your pocket. We keep all devices in great condition so they feel as good as new when you purchase them.</p>
+        <div class="mt-4">
+          <h4>Buy Refurbished Mobile Phones, Laptops, Tablets & Many More..</h4>
+          <p>RefurbTechHub offers a smart and economical way to buy premium devices. Explore our vast selection of refurbished smartphones at prices that won't break the bank. Our phones are inspected and restored by professionals to ensure they feel as good as new. On top of that, you get:</p>
+          <ul class="benefits-list">
+            <li>High-quality refurbished phones, Laptops, Tablets & many More at affordable prices</li>
+            <li>32-point quality checks</li>
+            <li>12-month warranty on all refurbished phones</li>
+            <li>15 days replacement guarantee</li>
+          </ul>
+          <p>Upgrade your phone without stretching your budget. Discover our wide range of refurbished products and get yours today at nearly half the price.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-12 px-4"> <!-- Full width column with side padding -->
+        <h4>How to Buy From RefurbTechHub</h4>
+        <p>Buying refurbished devices from RefurbTechHub is very easy and convenient. Just follow these simple steps:</p>
+        <ol class="steps-list">
+          <li>Visit our website and browse through our collection</li>
+          <li>Select the brand and model you want to purchase</li>
+          <li>Choose the condition grade - Fair, Good, or Like New</li>
+          <li>See the price and add to cart</li>
+          <li>Enter your shipping details and preferred payment method</li>
+          <li>Complete your purchase and wait for delivery</li>
+        </ol>
+        <p class="mt-3">Your device will be carefully packaged and delivered to your doorstep with complete warranty protection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="productOverlay" class="product-overlay d-none">
+  <div class="product-overlay-content">
+    <span class="close-btn" onclick="closeProductView()">×</span>
+    <div class="row g-5 align-items-start">
+      <!-- LEFT: Main Image and Thumbnails -->
+      <div class="col-md-6 text-center">
+        <img id="overlayMainImage" src="" class="main-image mb-3" alt="Main Product Image">
+        <div id="thumbnailContainer" class="d-flex justify-content-center gap-2 flex-wrap"></div>
+      </div>
+
+      <!-- RIGHT: Configurable Options -->
+      <div class="col-md-6">
+        <h4 id="overlayTitle" class="fw-bold mb-2"></h4>
+        <p id="overlayPrice" class="text-success fs-5 fw-semibold mb-4"></p>
+
+        <div class="option-section">
+  <span class="section-title">RAM:</span>
+  <div id="ramOptions" class="option-group">
+    <!-- Dynamic RAM buttons inserted by JS -->
+  </div>
+</div>
+
+<div class="option-section">
+  <span class="section-title">Storage:</span>
+  <div id="storageOptions" class="option-group">
+    <!-- Dynamic storage buttons inserted by JS -->
+  </div>
+</div>
+
+<div class="option-section">
+  <span class="section-title">Color:</span>
+  <div id="colorOptions" class="color-group d-flex gap-2">
+    <!-- Dynamic swatches inserted by JS -->
+  </div>
+</div>
+
+<div class="option-section">
+  <span class="section-title">Condition:</span>
+  <div id="conditionOptions" class="option-group">
+    <button class="option-btn" data-condition="Good">Good</button>
+    <button class="option-btn" data-condition="Very Good">Very Good</button>
+    <button class="option-btn" data-condition="Excellent">Excellent</button>
+  </div>
+</div>
+
+
+        <!-- CTA Buttons -->
+        <div class="overlay-buttons mt-4">
+          <button class="btn btn-success me-2">Buy Now</button>
+          <button class="btn btn-outline-primary">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Brand Product Overlay -->
+<div id="brandOverlay" class="product-overlay d-none">
+  <div class="product-overlay-content container-fluid px-5 py-4">
+    <span class="close-btn" onclick="closeBrandOverlay()">×</span>
+    <h2 id="brandTitle" class="mb-4"></h2>
+    <div id="brandProductsContainer" class="row g-4"></div>
+  </div>
+</div>
+
+<!-- Cart Sidebar -->
+<div id="cartSidebar" class="position-fixed top-0 end-0 bg-white shadow-lg p-4 d-none" style="width: 350px; height: 100vh; z-index: 1050; overflow-y: auto;">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h5 class="mb-0">Your Cart</h5>
+    <button class="btn-close" onclick="toggleCartSidebar()"></button>
+  </div>
+
+  <div id="cartItems"></div>
+
+  <hr>
+  <div class="d-flex justify-content-between align-items-center fw-bold">
+    <span>Total:</span>
+    <span id="cartTotal">₹0</span>
+  </div>
+
+  <div class="text-end mt-3 px-3">
+  <button id="checkoutBtn" class="btn btn-success">Proceed to Checkout</button>
+    <button class="btn btn-outline-danger" id="clearCartBtn">Clear Cart</button>
+  </div>
+</div>
+
+<!-- Cart Toggle Button (optional floating button if not in navbar) -->
+
+<button id="cartToggleBtn" class="btn btn-primary position-fixed" style="bottom: 20px; right: 20px; z-index: 1040;">
+  <i class="fas fa-shopping-cart"></i>
+</button> 
+<!-- Toast Notification -->
+<div id="toastContainer" class="position-fixed bottom-0 end-0 p-4" style="z-index: 1100;">
+  <div id="cartToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        Item added to cart.
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+<!-- Login Overlay -->
+<div id="loginOverlay" class="login-overlay d-none">
+  <div class="login-modal">
+    <span class="close-btn" onclick="toggleLogin(false)">×</span>
+    <div class="theme-toggle">
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div id="loginContainer">
+      <h3>Login</h3>
+      <input type="email" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button onclick="handleLogin()">Login</button>
+      <p><a href="#" onclick="showPage('register')">Register</a> | <a href="#" onclick="showPage('forgot')">Forgot Password?</a></p>
+    </div>
+    <div id="registerContainer" class="d-none">
+      <h3>Register</h3>
+      <input id="regName" type="text" placeholder="Full Name" required>
+<input id="regPhone" type="tel" placeholder="Phone Number" required>
+<input id="regAddress" type="text" placeholder="Address" required>
+<input id="regEmail" type="email" placeholder="Email" required>
+<input id="regPassword" type="password" placeholder="Password" required>
+
+      <button onclick="handleRegister()">Register</button>
+      <p><a href="#" onclick="showPage('login')">Already have an account?</a></p>
+    </div>
+    <div id="forgotContainer" class="d-none">
+      <h3>Forgot Password</h3>
+      <input type="email" id="forgotEmail" placeholder="Enter your email" required>
+      <button onclick="handleForgot()">Send Reset Link</button>
+      <p><a href="#" onclick="showPage('login')">Back to Login</a></p>
+    </div>
+  </div>
+</div>
+<pre class="dropdown-item-text" id="userEmailDisplay">User Info</pre>
+
+<!-- Login CSS -->
+<link rel="stylesheet" href="login.css">
+
+<!-- Login Script -->
+<script src="login.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<footer class="footer text-center">
+  <div class="container">
+    <p>&copy; 2025 RefurbTechHub. All rights reserved.</p>
+    <p>Contact: refurbtechhub@gmail.com | +9779808273375</p>
+  </div>
+</footer>
+</body>
+</html>  
